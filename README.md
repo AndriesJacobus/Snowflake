@@ -2,7 +2,7 @@
 Fun java app that prints a unique Snowflake in the terminal
 
 ## Usage:
-Compile and run with `javac Snowflake.java; java Snowflake x` where `x` is any off number from 1 to 15.<br/>
+Compile and run with `javac Snowflake.java; java Snowflake x` where `x` is any odd number from 1 to 15.<br/>
 This number represents the size of the Snowflake, as well as the likelihood that it will be unique (on a scale from 1 to 15).
 <br/>
 <br/>
