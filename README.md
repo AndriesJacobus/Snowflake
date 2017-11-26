@@ -1,2 +1,2 @@
 # Snowflake
-Fun java app that prints a unique Snowflake concurrently in the terminal
+Fun java app that prints a unique Snowflake in the terminal
