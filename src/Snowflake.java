@@ -1,5 +1,5 @@
 /**
- * @author:     Jaco du Plooy
+ * Created by Jaco du Plooy
  */
 
 public class Snowflake
@@ -24,6 +24,15 @@ public class Snowflake
             {
                 len = driver.max;
             }
+            else if (len == 0)
+            {
+                len++;
+            }
+            else if (len % 2 == 0)
+            {
+                // Len is even, make it odd
+                len--;
+            }
 
             // All is good, make snowflake
             driver.generateSnowflake(len);
@@ -33,7 +42,8 @@ public class Snowflake
             System.out.println("The pipeline argument you provided is not an integer." +
                     "\n\nPlease make sure you enter an integer.\n" +
                     "Example:\n javac Snowflake.java; java Snowflake 15\n\n" +
-                    "NOTE: the max is " + driver.max + ". Any length larger than this will be reduced.");
+                    "NOTE: the max is " + driver.max + ". Any length larger than this will be reduced." +
+                    "NOTE: the provided integer must be odd. Any even integer will be made odd.");
             System.exit(0);
         }
     }
@@ -41,15 +51,6 @@ public class Snowflake
     private void generateSnowflake (int len)
     {
         SnowflakeHandler handler = new SnowflakeHandler(len);
-    }
-
-    private class SnowflakeHandler
-    {
-        private String[][] canvas;
-
-        public SnowflakeHandler (int len)
-        {
-            canvas = new String[len][len];
-        }
+        handler.drawSnowflake(len / 2);
     }
 }
